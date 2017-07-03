@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "csun-metalab/provision-new-user",
+    "description": "Google API application to provision a new user account and send out everything per the on-boarding process",
+    "keywords": ["provision", "onboard", "laravel", "google"],
     "license": "MIT",
     "type": "project",
     "require": {

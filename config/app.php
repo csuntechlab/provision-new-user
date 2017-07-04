@@ -180,8 +180,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-       CSUNMetaLab\Authentication\Providers\AuthServiceProvider::class,
-       CSUNMetaLab\MultipleLogs\Providers\LoggingServiceProvider::class,
+        // the Auth service provider has to be at the end since the auth class won't
+        // be registered until this point
+        CSUNMetaLab\Authentication\Providers\AuthServiceProvider::class,
+        CSUNMetaLab\MultipleLogs\Providers\LoggingServiceProvider::class,
 
     ],
 

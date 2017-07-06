@@ -20,7 +20,7 @@ Route::get('/', function() {
 // the routes in this group require an active OAuth access token
 Route::prefix('provision')->middleware(['access_token'])->group(function() {
    Route::get('new', 'ProvisionController@showNewUserScreen')->name('provision.new');
-   Route::get('p', 'ProvisionController@provisionUser')->name('provision.provision');
+   Route::post('new', 'ProvisionController@provisionUser')->name('provision.provision');
 });
 
 // OAuth routes that tie into the Google API authorization functionality

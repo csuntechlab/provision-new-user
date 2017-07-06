@@ -11,12 +11,21 @@
                 <a href="{{ url('/')  }}" class="primary-nav__sub-brand">Provision Google Apps User</a>
                 <a class="sr-only" href="#main">Skip to main content</a>
             </div>
-            <ul class="primary-nav__links">
-                <li><a href="#" class="primary-nav__link">Nav Link #1</a></li>
-                <li><a href="#" class="primary-nav__link active">Nav Link #2</a></li>
-                <li><a href="#" class="primary-nav__link">Nav Link #3</a></li>
-                <li><a href="#" class="primary-nav__link">Nav Link #4</a></li>
-            </ul>
         </div>
     </nav>
 </div>
+
+@if(count($errors) > 0)
+    <div class="alert alert--danger">
+        <p>The following errors occurred:</p>
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@elseif(session('success'))
+    <div class="alert alert--success" style="color:white">
+        {{ session('success') }}
+    </div>
+@endif

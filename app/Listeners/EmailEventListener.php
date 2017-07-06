@@ -38,7 +38,7 @@ class EmailEventListener
        $messageText .= "From: {$event->from}\r\n";
        $messageText .= "Subject: =?utf-8?B?{$encodedSubject}?=\r\n";
        $messageText .= "MIME-Version: 1.0\r\n";
-       $messageText .= "Content-Type: text/html; charset=utf-8\r\n";
+       $messageText .= "Content-Type: text/plain; charset=utf-8; format=flowed\r\n";
        $messageText .= "Content-Transfer-Encoding: quoted-printable\r\n\r\n";
        $messageText .= "{$event->body}\r\n";
 
@@ -46,7 +46,7 @@ class EmailEventListener
        $raw = rtrim(strtr(base64_encode($messageText), '+/', '-_'), '=');
        $message->setRaw($raw);
 
-       // send out the email
-       $this->service->users_messages->send($event->to, $message);
+       // send out the email using the currently-authenticated user
+       $this->service->users_messages->send('me', $message);
     }
 }

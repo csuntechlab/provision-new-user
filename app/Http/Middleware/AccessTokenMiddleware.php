@@ -23,6 +23,7 @@ class AccessTokenMiddleware
 
        // set the client access token based on the value in the session
        $client = resolve('Google_Client');
+
        $client->setAccessToken(session('access_token'));
 
        return $next($request);

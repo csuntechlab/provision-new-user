@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
            $client->setIncludeGrantedScopes(true);   // incremental auth
            $client->addScope(Google_Service_Directory::ADMIN_DIRECTORY_USER);
 
-           $client->setRedirectUri(url('oauth/authorized'));
+           $client->setRedirectUri(route('oauth.success'));
            return $client;
         });
     }

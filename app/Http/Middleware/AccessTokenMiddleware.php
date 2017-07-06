@@ -17,9 +17,13 @@ class AccessTokenMiddleware
     {
        // only allow the action to be handled if the user has an OAuth
        // access token
-       if(!session('access_token')) {
+       if(!session()->has('access_token')) {
           return redirect(route('oauth.authorize'));
        }
+
+       // set the client access token based on the value in the session
+       $client = resolve('Google_Client');
+       $client->setAccessToken(session('access_token'));
 
        return $next($request);
     }

@@ -15,7 +15,7 @@ class OAuthController extends Controller
     * @return RedirectResponse
     */
    public function authorizeUser(Google_Client $client) {
-      if(session('access_token')) {
+      if(session()->has('access_token')) {
          return redirect(route('provision.new'));
       }
 

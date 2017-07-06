@@ -66,8 +66,11 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
+            'driver' => 'ldap',
+
+            // this can be any subclass of the CSUNMetaLab\Authentication\MetaUser class
+            // or the MetaUser class itself since it works out of the box
+            'model' => CSUNMetaLab\Authentication\MetaUser::class,
         ],
 
         // 'users' => [

@@ -180,6 +180,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // the Auth service provider has to be at the end since the auth class won't
+        // be registered until this point
+        CSUNMetaLab\Authentication\Providers\AuthServiceProvider::class,
+        CSUNMetaLab\MultipleLogs\Providers\LoggingServiceProvider::class,
+
     ],
 
     /*
@@ -197,6 +202,8 @@ return [
         'Debugbar'      => Barryvdh\Debugbar\Facade::class,
         'HTML'      => Collective\Html\HtmlFacade::class,
         'Form'      => Collective\Html\FormFacade::class,
+        'AuditLog' => CSUNMetaLab\MultipleLogs\Facades\AuditLog::class,
+        'AuthLog' => CSUNMetaLab\MultipleLogs\Facades\AuthLog::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

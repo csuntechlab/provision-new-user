@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca87eb22a0aa53dc4f501eaf9b4ced0c",
+    "content-hash": "a221f942634dd83da282fe89c4373e48",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -67,6 +67,87 @@
                 "webprofiler"
             ],
             "time": "2017-06-14T07:44:44+00:00"
+        },
+        {
+            "name": "csun-metalab/laravel-directory-authentication",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/csun-metalab/laravel-directory-authentication.git",
+                "reference": "39a372e1fcdf50b69e2e57bd2e439af32646e9f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/csun-metalab/laravel-directory-authentication/zipball/39a372e1fcdf50b69e2e57bd2e439af32646e9f6",
+                "reference": "39a372e1fcdf50b69e2e57bd2e439af32646e9f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/Authentication/"
+                ],
+                "psr-4": {
+                    "CSUNMetaLab\\Authentication\\": "src/Authentication/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Fritz",
+                    "email": "mattf@burbankparanormal.com"
+                }
+            ],
+            "description": "Composer package for Laravel 5.0 and above to allow for directory-based authentication",
+            "time": "2017-06-08T17:52:12+00:00"
+        },
+        {
+            "name": "csun-metalab/laravel-multiple-logs",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/csun-metalab/laravel-multiple-logs.git",
+                "reference": "a194a0f2625cb1297685669b208e2e461e67ad27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/csun-metalab/laravel-multiple-logs/zipball/a194a0f2625cb1297685669b208e2e461e67ad27",
+                "reference": "a194a0f2625cb1297685669b208e2e461e67ad27",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/MultipleLogs/"
+                ],
+                "files": [
+                    "src/MultipleLogs/helpers.php"
+                ],
+                "psr-0": {
+                    "CSUNMetaLab\\MultipleLogs\\": "src/MultipleLogs/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Fritz",
+                    "email": "mattf@burbankparanormal.com"
+                }
+            ],
+            "description": "Composer package for Laravel 5 that adds a few additional log files as well as facades to write to them.",
+            "time": "2017-06-06T00:32:16+00:00"
         },
         {
             "name": "csun-metalab/laravel-proxypass",

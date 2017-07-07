@@ -27,7 +27,8 @@ class ProvisionUserRequest extends FormRequest
            'first_name' => 'required',
            'last_name' => 'required',
            'org_email' => 'required|email',
-           'ext_email' => 'required|email|different:org_email'
+           'ext_email' => 'required|email|different:org_email',
+           'org_unit' => 'required',
         ];
     }
 
@@ -38,6 +39,7 @@ class ProvisionUserRequest extends FormRequest
           'org_email.required' => 'Please enter the new organizational email',
           'ext_email.required' => 'Please enter an existing external email address for the new user',
           'ext_email.different' => 'The external email cannot be the same as the organizational email',
+          'org_unit.required' => 'Please select an organizational unit for this new user',
        ];
     }
 }

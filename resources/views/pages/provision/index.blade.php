@@ -23,6 +23,9 @@
         {!! Form::label('ext_email', 'Existing External Email Address') !!}
         {!! Form::text('ext_email', null, ['placeholder' => 'someaccount@external.com']) !!}
 
+        {!! Form::label('org_unit', 'Organizational Unit') !!}
+        {!! Form::select('org_unit', $orgUnits, null) !!}
+
         <br />
         {!! Form::submit('Provision User') !!}
 

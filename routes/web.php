@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +17,11 @@ Route::get('/', function() {
    return redirect(route('oauth.authorize'));
 });
 
-Route::get('new', 'ProvisionController@showNewUserScreen')->name('provision.new');
+// the routes in this group require an active OAuth access token
+Route::prefix('provision')->middleware(['access_token'])->group(function() {
+   Route::get('new', 'ProvisionController@showNewUserScreen')->name('provision.new');
+   Route::post('new', 'ProvisionController@provisionUser')->name('provision.provision');
+});
 
 // OAuth routes that tie into the Google API authorization functionality
 Route::prefix('oauth')->group(function() {

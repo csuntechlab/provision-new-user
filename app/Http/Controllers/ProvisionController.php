@@ -80,7 +80,6 @@ class ProvisionController extends Controller
 
       // create the new user
       $resp = $service->users->insert($user);
-      dd($resp);
    }
 
    /**

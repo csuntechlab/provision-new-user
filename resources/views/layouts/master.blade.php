@@ -11,6 +11,9 @@
         <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
         <link rel="stylesheet" href="//cdn.metalab.csun.edu/metaphor/css/metaphor.css">
+
+        {{-- APP SCRIPTS --}}
+        <script src="//cdn.metalab.csun.edu/metaphor/js/metaphor.js"></script>
     </head>
     <body>
 
@@ -36,8 +39,5 @@
             @yield('modal')
         @include('layouts.partials.footer')
         {{-- APP CONTENT ENDS --}}
-        
-        {{-- APP SCRIPTS --}}
-        <script src="//cdn.metalab.csun.edu/metaphor/js/metaphor.js"></script>
     </body>
 </html>

@@ -30,4 +30,20 @@
         {!! Form::submit('Provision User') !!}
 
     {!! Form::close() !!}
+
+    <script type="text/javascript">
+        var domain = '{{ config("provision.domain") }}';
+        var full_email = '';
+        function setEmail() {
+            $("#org_email").val(
+                $("#first_name").val().toLowerCase() + '.' + $("#last_name").val().toLowerCase() + '@' + domain.toLowerCase()
+            );
+        }
+        $("#first_name").keyup(function() {
+            setEmail();
+        });
+        $("#last_name").keyup(function() {
+            setEmail();
+        });
+    </script>
 @endsection

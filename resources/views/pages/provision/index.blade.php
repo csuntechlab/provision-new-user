@@ -33,7 +33,6 @@
 
     <script type="text/javascript">
         var domain = '{{ config("provision.domain") }}';
-        var full_email = '';
         function setEmail() {
             $("#org_email").val(
                 $("#first_name").val().toLowerCase() + '.' + $("#last_name").val().toLowerCase() + '@' + domain.toLowerCase()
